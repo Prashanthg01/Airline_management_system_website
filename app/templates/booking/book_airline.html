@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book_airline.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Book Airline</h2>
+    <form method="post" class="airline-form">
+        {% csrf_token %}
+        <div class="main">
+            <div>
+                <div class="form-group">
+                    <label for="airline_id">Airline ID:</label>
+                    <input type="text" name="airline_id" class="form-control" placeholder="Airline ID">
+                </div>
+                <div class="form-group">
+                    <label for="airline_name">Airline Name:</label>
+                    <input type="text" name="airline_name" class="form-control" placeholder="Airline Name">
+                </div>
+                <div class="form-group">
+                    <label for="departure_destination">Departure Destination:</label>
+                    <input type="text" name="departure_destination" class="form-control" placeholder="Departure Destination">
+                </div>
+                <div class="form-group">
+                    <label for="departure">Departure:</label>
+                    <input type="datetime-local" name="departure" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="arrival_destination">Arrival Destination:</label>
+                    <input type="text" name="arrival_destination" class="form-control" placeholder="Arrival Destination">
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="arrival">Arrival:</label>
+                    <input type="datetime-local" name="arrival" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <input type="number" name="duration" class="form-control" step="0.01" placeholder="Duration">
+                </div>
+                <div class="form-group">
+                    <label for="total_seats">Total Seats:</label>
+                    <input type="number" name="total_seats" class="form-control" placeholder="Total Seats">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <input type="text" name="status" class="form-control" placeholder="Status">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+</div>
+{% endblock %}

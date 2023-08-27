@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    td, th {
+        width: 250px;
+        text-align: left;
+    }
+    table{
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Passenger Details</h2>
+    <table class="table">
+        <tr>
+            <th>Name:</th>
+            <td>{{ passenger.name }}</td>
+        </tr>
+        <tr>
+            <th>Passenger ID:</th>
+            <td>{{ passenger.passenger_id }}</td>
+        </tr>
+        <tr>
+            <th>Airline:</th>
+            <td>{{ passenger.airline }}</td>
+        </tr>
+        <tr>
+            <th>Address:</th>
+            <td>{{ passenger.address }}</td>
+        </tr>
+        <tr>
+            <th>Phone Number:</th>
+            <td>{{ passenger.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>{{ passenger.email }}</td>
+        </tr>
+        <tr>
+            <th>Gender:</th>
+            <td>{{ passenger.gender }}</td>
+        </tr>
+        <tr>
+            <th>Nationality:</th>
+            <td>{{ passenger.nationality }}</td>
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <td>{{ passenger.age }}</td>
+        </tr>
+        <tr>
+            <th>Luggage Count:</th>
+            <td>{{ passenger.luggage_count }}</td>
+        </tr>
+        <!-- Add more fields as needed -->
+    </table>
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}

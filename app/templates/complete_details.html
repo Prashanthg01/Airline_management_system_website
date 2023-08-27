@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    td, th {
+        width: 250px;
+        text-align: left;
+    }
+    table{
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Complete Details</h2>
+
+    <div>
+        <h3>Airline Details:</h3>
+        <table class="table">
+            <tr>
+                <th>Airline ID</th>
+                <td>{{ airline.airline_id }}</td>
+            </tr>
+            <tr>
+                <th>Airline Name</th>
+                <td>{{ airline.airline_name }}</td>
+            </tr>
+            <tr>
+                <th>Departure Destination</th>
+                <td>{{ airline.departure_destination }}</td>
+            </tr>
+            <tr>
+                <th>Departure</th>
+                <td>{{ airline.departure }}</td>
+            </tr>
+            <tr>
+                <th>Arrival Destination</th>
+                <td>{{ airline.arrival_destination }}</td>
+            </tr>
+            <tr>
+                <th>Arrival</th>
+                <td>{{ airline.arrival }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ airline.duration }}</td>
+            </tr>
+            <tr>
+                <th>Total Seats</th>
+                <td>{{ airline.total_seats }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ airline.status }}</td>
+            </tr>
+        </table>    
+    
+        <h3>Passenger Details:</h3>
+        <table class="table">
+            <tbody>
+                {% for passenger in passengers %}
+                <tr>
+                    <tr>
+                        <th>Name:</th>
+                        <td>{{ passenger.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Passenger ID:</th>
+                        <td>{{ passenger.passenger_id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Airline:</th>
+                        <td>{{ passenger.airline }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td>{{ passenger.address }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number:</th>
+                        <td>{{ passenger.phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{ passenger.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Gender:</th>
+                        <td>{{ passenger.gender }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nationality:</th>
+                        <td>{{ passenger.nationality }}</td>
+                    </tr>
+                    <tr>
+                        <th>Age:</th>
+                        <td>{{ passenger.age }}</td>
+                    </tr>
+                    <tr>
+                        <th>Luggage Count:</th>
+                        <td>{{ passenger.luggage_count }}</td>
+                    </tr>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}

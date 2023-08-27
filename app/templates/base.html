@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Airline Management System{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'register_passenger' %}">Register Passenger</a></li>
+                <li><a href="{% url 'book_airline' %}">Book Airline</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+            <ul>
+                {% if user.is_authenticated %}
+                    <p>Hello, {{ user.username }}!</p>
+                    <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                    <p><a href="{% url 'login' %}">Login</a></p>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <center><p>&copy; {{ year }} Airline Management System</p></center>
+    </footer>
+</body>
+</html>

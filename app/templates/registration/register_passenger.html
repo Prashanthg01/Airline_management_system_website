@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <title>Register Passenger</title>
+</head>
+<body>
+    <div class="register-container" style="margin-bottom: 5%;width: 635px;">
+        <h2>Register Passenger</h2>
+        <form method="post" class="register-form custom-reg">
+            {% csrf_token %}
+            <div class="main">
+                <div>
+                    <label for="id_airline">Airline:</label>
+                    {{ form.airline }}
+                    
+                    <label for="id_passenger_id">Passenger ID:</label>
+                    {{ form.passenger_id }}
+                    
+                    <label for="id_name">Name:</label>
+                    {{ form.name }}
+                    
+                    <label for="id_address">Address:</label>
+                    {{ form.address }}
+                </div>
+                <div>
+                    <label for="id_phone_number">Phone Number:</label>
+                    {{ form.phone_number }}
+                    
+                    <label for="id_email">Email:</label>
+                    {{ form.email }}
+                    
+                    <label for="id_gender">Gender:</label>
+                    {{ form.gender }}
+                    
+                    <label for="id_nationality">Nationality:</label>
+                    {{ form.nationality }}
+                    
+                    <label for="id_age">Age:</label>
+                    {{ form.age }}
+                    
+                    <label for="id_luggage_count">Luggage Count:</label>
+                    {{ form.luggage_count }}
+                </div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

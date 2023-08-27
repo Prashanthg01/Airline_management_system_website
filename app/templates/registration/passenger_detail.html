@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/passenger_detail_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Passenger Details</h2>
+    <table class="table">
+        <tr>
+            <th>Name:</th>
+            <td>{{ passenger.name }}</td>
+        </tr>
+        <tr>
+            <th>Airline:</th>
+            <td>{{ passenger.airline }}</td>
+        </tr>
+        <tr>
+            <th>Passenger ID:</th>
+            <td>{{ passenger.passenger_id }}</td>
+        </tr>
+        <!-- Add more fields as needed -->
+    </table>
+    <a href="{% url 'register_passenger' %}" class="btn">Register Another Passenger</a>
+{% endblock %}

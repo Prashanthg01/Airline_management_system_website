@@ -1,0 +1,23 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Local development settings
+.env
+*.sqlite3
+
+# Django migration files
+*.py[cod]
+*.bak
+*.swp
+*.~c
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+myenv/
+*.pyproj
+*.pyproj.user
+.vscode/

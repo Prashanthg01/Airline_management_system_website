@@ -1,0 +1,102 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 320px;
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"], select {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.register-form input[type="text"]:focus,
+.register-form input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+.register-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.register-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.register-form p {
+    margin-top: 10px;
+    color: #666;
+    text-align: center;
+}
+
+.register-form a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-form a:hover {
+    color: #0056b3;
+}
+
+.custom-reg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.main {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    width: 300px;
+    height: 30px;
+}
+
+select {
+    width: 300px;
+    height: 40px;
+}

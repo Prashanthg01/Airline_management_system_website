@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<style>
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .card-main {
+        display: flex;
+        gap: 20px;
+    }
+    .card-main div, form {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        padding: 40px 50px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        width: 250px;
+        font-size: 18px;
+        text-align: center;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    form input {
+        height: 30px;
+    }
+    form button {
+        padding: 10px 0px;
+        background-color: lightseagreen;
+        border: none;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="card-main">
+            <form method="get" action="{% url 'passenger_detail' %}">
+                <label for="passenger_id">Enter Passenger ID:</label>
+                <input type="text" id="passenger_id" name="passenger_id" required>
+                <button type="submit" class="btn btn-primary">Get Passenger Details</button>
+            </form>
+    
+            <form method="get" class="form-inline" action="{% url 'complete_details' %}">
+                <label for="airlineId" class="sr-only">Airline ID</label>
+                <input type="text" class="form-control" id="airlineId" name="airline_id" placeholder="Enter Airline ID" required>
+                <button type="submit" class="btn btn-primary mb-2">Show Details</button>
+            </form>
+        </div>
+
+        <div class="card-main">
+            <div>
+                <a href="{% url 'register_passenger' %}">Register Passenger</a>
+            </div>
+            <div>
+                <a href="{% url 'book_airline' %}">Book Airline</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
